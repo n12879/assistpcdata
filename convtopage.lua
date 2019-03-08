@@ -29,7 +29,7 @@ function docend ()
 end
 
 function writetitle (str)
-  fappendl(namemd, "##" .. str)
+  fappendl(namemd, "# " .. str)
   fappendl(namehtml, "<h1>" .. str .. "</h1>")
 end
 
@@ -74,6 +74,7 @@ function execspecial (str)
       .."</a>"
     )
   elseif cmd == "vspace" then
+    fappendl(namemd, "  ")
     fappendl(namemd, "  ")
     fappendl(namehtml, string.rep("<br>", 4))
   else
